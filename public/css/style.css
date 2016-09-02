@@ -1,0 +1,118 @@
+body, html {
+	height: calc(100% - 25px);
+}
+body {
+  font: 14px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*#full {
+	height: 100%;
+	width: 100%;
+  	background: url(/img/desk1.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}*/
+header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-image: url(/img/desk1-dark.jpg);
+    text-align: center;
+    color: white;
+}
+footer {
+    padding: 20px;
+    margin-bottom: 50px;
+}
+section {
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    background-color: black;
+}
+.last-section {
+    margin-bottom: 50px;
+}
+.navbar,.navbar-default {
+    background-color: #FCFCFC;
+}
+.box-header {
+    margin-top: 0;
+    font-family: 'Roboto';
+    font-size: 40px;
+    color: white;
+}
+.box-content {
+
+}
+
+
+
+/* ============================== */
+#header-Maine,#header-Dashboard {
+    font-family: 'Roboto';
+    font-size: 60px;
+}
+#header-Maine {
+    font-weight: 600
+}
+
+#header-Dashboard {
+    font-weight: 300
+}
+
+/* ============================== */
+.navbar-brand{
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+#brand-Maine {
+    font-weight: 400
+}
+#brand-Dashboard {
+    font-weight: 200
+}
+/* ============================== */
+#header-box, #info-container {
+    color: #ff5256;
+}
+#header-box {
+    margin-top: 50px;
+}
+#info-container {
+    color: #D4D4D4;
+    margin-top: 0px;
+    /*box-shadow: 0 2px 5px #777777;*/
+    /*border: 10px solid white;
+    background-color:rgba(255, 255, 255, 0.5);*/
+    padding: 50px;
+    font-family: 'Raleway';
+}
+#info-date {
+    font-size: 20px;
+    font-weight: 200;
+}
+#info-period {
+    font-size: 40px;
+}
+#info-countdown {
+    font-size: 30px;
+}
+.schedule-box {
+    background-color: #FC4349;
+}
+.events-box {
+    background-color: #3D3B3D;
+}

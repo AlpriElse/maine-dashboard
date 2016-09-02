@@ -1,0 +1,24 @@
+{
+  "name": "maine-dashboard",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Alpri Else <alprielse@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "jquery": "3.*",
+    "moment": "^2.14.1"
+  }
+}
