@@ -1,3 +1,3 @@
 #Maine Dashboard
-## Copyright 2016 - Alpri Else
-### All Rights Reserved.
+Programming and developed by Alpri Else - Maine South class of 2017.
+(c) 2016 All Rights Reserved.
