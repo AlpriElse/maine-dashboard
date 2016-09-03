@@ -24,8 +24,8 @@
 </head>
 
 <body ng-app='maineDashboard'>
-    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-        <div class="container">
+    <!--<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -45,41 +45,131 @@
             </div>
         </div>
     </nav>
+-->
 
     <!-- First Section -->
     <header ng-controller='InfoController'>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2" id='header-box'>
-                <h1 class='text-left'><span id='header-Maine'>MAINE</span> <span id='header-Dashboard'>DASHBOARD</span></h1>
-                <h6 id='info-date' class='text-left'>Monday August 31, 2016</h6>
+        <div class="row col-md-8 col-md-offset-2">
+            <div id='header-box'>
+                <h1><span id='header-Maine'>MAINE</span> <span id='header-Dashboard'>DASHBOARD</span></h1>
+                <h6 id='info-date'>{{date}}</h6>
             </div>
         </div>
-        <div id='info-container'>
-            <div class='row'>
-                <div class='col-md-4 col-md-offset-2 text-right' style='background-color: none'>
-                    <h2>Regular Day</h2>
-                    <h1 style='font-size: 100px'>00:00</h1>
-                </div>
-                <div class='col-md-6 text-left' style='background-color: none'>
-                    <h2><b>Period 1</b> ends at <b>00:00</b></h2>
-                    <h3><b>2</b> hours <b>5</b> minutes <b>3</b> seconds</h3>
-                    <br>
-                    <h2><b>Period 1</b> ends at <b>00:00</b></h2>
-                    <h3><b>2</b> hours <b>5</b> minutes <b>3</b> seconds</h3>
-                </div>
+        <div class='row'>
+            <div class='col-md-4 col-md-offset-2' id='info-container'>
+                <h2 id='info-daytype'>Regular Day</h2>
+                <h1 id='info-time'>{{time}}</h1>
+            </div>
+            <div class='col-md-6' id='countdown-container'>
+                <h2 class='countdown-desc'><b>Period 1</b> ends at <b>00:00</b></h2>
+                <h3 class='countdown-timer'><b>2</b> hours <b>5</b> minutes <b>3</b> seconds</h3>
+                <br>
+                <h2 class='countdown-desc'><b>Period 1</b> ends at <b>00:00</b></h2>
+                <h3 class='countdown-timer'><b>2</b> hours <b>5</b> minutes <b>3</b> seconds</h3>
+            </div>
             </div>
         </div>
     </header>
 
-    <section class='schedule-box'>
+    <section class='box' id='schedule-box'>
         <h1 class='box-header'>Schedule</h1>
-        <div>
-
-
-
+        <div class='box-content container'>
+            <div class='row'>
+                <div class='table col-xs-8 col-xs-offset-1'>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Period 1</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 2a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 2b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 3a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 3b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Hawk Talk</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 4a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 4b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 5a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 5b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td >Period 6a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td >Period 6b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td >Period 7a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 7b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td >Period 8a</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 8b</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Period 9</td>
+                                <td>00:00</td>
+                                <td>00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
-    <section class='events-box'>
+    <section class='box events-box'>
         <h1 class='box-header'>Events</h1>
     </section>
 
@@ -89,6 +179,7 @@
     <script src='/lib/jquery/dist/jquery.js'></script>
     <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src='/lib/angular/angular.min.js'></script>
+    <script src='/lib/moment/min/moment.min.js'></script>
     <script src='/js/app.js'></script>
 
 </body>

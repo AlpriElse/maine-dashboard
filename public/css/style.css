@@ -8,27 +8,21 @@ body {
 a {
   color: #00B7FF;
 }
-
-/*#full {
-	height: 100%;
-	width: 100%;
-  	background: url(/img/desk1.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}*/
+b {
+    font-weight: 600
+}
 header {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
     background-image: url(/img/desk1-dark.jpg);
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: auto;
     text-align: center;
     color: white;
 }
@@ -36,44 +30,36 @@ footer {
     padding: 20px;
     margin-bottom: 50px;
 }
-section {
+section.box{
     width: 100%;
     height: 100%;
-    padding: 100px;
     background-color: black;
+    margin-top: 0;
+    font-family: 'Roboto';
+    color: white;
+    text-align: center;
 }
 .last-section {
     margin-bottom: 50px;
 }
+.box-header {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    height: 10%;
+}
+.box-content {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 90%;
+    background-color: none;
+    overflow: auto;
+}
+
+/* ============================== */
 .navbar,.navbar-default {
     background-color: #FCFCFC;
 }
-.box-header {
-    margin-top: 0;
-    font-family: 'Roboto';
-    font-size: 40px;
-    color: white;
-}
-.box-content {
-
-}
-
-
-
-/* ============================== */
-#header-Maine,#header-Dashboard {
-    font-family: 'Roboto';
-    font-size: 60px;
-}
-#header-Maine {
-    font-weight: 600
-}
-
-#header-Dashboard {
-    font-weight: 300
-}
-
-/* ============================== */
 .navbar-brand{
     font-family: 'Raleway';
     font-size: 20px;
@@ -84,35 +70,105 @@ section {
 #brand-Dashboard {
     font-weight: 200
 }
+
 /* ============================== */
+
 #header-box, #info-container {
+    text-align: center;
     color: #ff5256;
 }
-#header-box {
-    margin-top: 50px;
+#header-Maine, #header-Dashboard {
+    margin-top: 30px;
 }
-#info-container {
-    color: #D4D4D4;
-    margin-top: 0px;
-    /*box-shadow: 0 2px 5px #777777;*/
-    /*border: 10px solid white;
-    background-color:rgba(255, 255, 255, 0.5);*/
-    padding: 50px;
-    font-family: 'Raleway';
+#header-Maine {
+    font-weight: 600;
+}
+#header-Dashboard {
+    font-weight: 300
 }
 #info-date {
     font-size: 20px;
     font-weight: 200;
 }
-#info-period {
-    font-size: 40px;
+/* ============================== */
+#info-container,#countdown-container {
+    margin-top: 70px;
+    text-align: center;
+    color: #D4D4D4;
+    font-family: 'Raleway';
 }
-#info-countdown {
+#info-daytype {
     font-size: 30px;
 }
-.schedule-box {
+#info-time {
+    font-size: 70px;
+}
+#countdown-container {
+
+}
+.countdown-desc {
+    font-size: 25px;
+}
+.countdown-timer {
+    font-size: 20px;
+}
+
+
+
+#schedule-box {
     background-color: #FC4349;
 }
+.table .table {
+    background-color: transparent;
+    width: inherit;
+}
+.table tbody tr, .table tbody,table{
+    border: none
+}
+
+
+
+
+
 .events-box {
     background-color: #3D3B3D;
+}
+/* ============================== */
+
+
+/* ============================== */
+
+
+/* Medium Screen Size and Up */
+@media only screen and (min-width: 992px) {
+    #header-Maine, #header-Dashboard {
+        font-size: 50px;
+    }
+    #header-box {
+        margin-top: 60px;
+        text-align: left;
+    }
+    #info-container {
+        text-align: right;
+    }
+    #info-daytype {
+        font-size: 30px;
+    }
+    #info-time {
+        font-size: 80px;
+    }
+    #countdown-container {
+        text-align: left;
+    }
+    .countdown-desc {
+        font-size: 30px;
+    }
+    .countdown-time {
+        font-size: 20px;
+    }
+
+    /* ========== */
+    .box-header {
+        text-align: left;
+    }
 }
