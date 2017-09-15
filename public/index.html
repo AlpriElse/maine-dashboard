@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body ng-app='maine-dashboard' ng-controller='Main-Controller'>
     <!--<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -77,91 +77,11 @@
             <div class='row'>
                 <div class='table col-xs-8 col-xs-offset-1'>
                     <table class="table">
-                        <tbody>
+                        <tbody ng-repeat='event in schedule'>
                             <tr>
-                                <td>Period 1</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 2a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 2b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 3a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 3b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Hawk Talk</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 4a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 4b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 5a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 5b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td >Period 6a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td >Period 6b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td >Period 7a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 7b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td >Period 8a</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 8b</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
-                            </tr>
-                            <tr>
-                                <td>Period 9</td>
-                                <td>00:00</td>
-                                <td>00:00</td>
+                                <td>{{event.period}}</td>
+                                <td>{{event['start time']}}</td>
+                                <td>{{event['end time']}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -179,6 +99,10 @@
     <script src='/lib/jquery/dist/jquery.js'></script>
     <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src='/lib/moment/min/moment.min.js'></script>
+
+    <script src='/lib/angular/angular.min.js'></script>
+    <script src='/js/app.js'></script>
+
 </body>
 
 </html>
