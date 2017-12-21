@@ -1,34 +1,16 @@
 {
   "name": "maine-dashboard",
-  "version": "0.0.1",
-  "description": "Maine South's Student Dashboard",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlpriElse/Maine-Dashboard.git"
-  },
-  "keywords": [
-    "mainedashboard",
-    "maine",
-    "south",
-    "dashboard"
-  ],
-  "author": "Alpri Else & Charlie Melidosian",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AlpriElse/Maine-Dashboard/issues"
-  },
-  "homepage": "https://github.com/AlpriElse/Maine-Dashboard#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "webpack": "^3.10.0"
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
