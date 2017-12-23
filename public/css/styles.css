@@ -1,0 +1,133 @@
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 90%;
+}
+.navbar-brand {float:none;}
+/* Content Styles */
+body
+{
+	background-color: #333333;
+	color: #E8E3D4;
+	font-family: Roboto;
+}
+
+.container-title
+{
+	font-family: Roboto, sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+}
+
+/* Clock Styles */
+#clock-container
+{
+	/*height: 420px;*/
+}
+#circle
+{
+	background-color: #FFFBE5;
+	height: 200px;
+	width: 200px;
+	border-radius: 100px;
+	margin: 0 auto;
+	overflow: auto;
+	box-shadow: 10px 10px solid black;
+}
+#currTime
+{
+	height: 70px;
+	margin-top: 55px;
+	margin-bottom: 0;
+	font-family: Raleway;
+	font-weight: 100;
+	font-size: 50px;
+
+}
+#currTime, #currDate
+{
+	color: #28282E;
+}
+#currDate, #currCountdown
+{
+	font-family: Roboto;
+}
+#currCountdown
+{
+	margin: 0 auto;
+	margin-top: 25px;
+	font-size: 18px;
+}
+#currDaytype, #currPeriod
+{
+	font-family: Roboto;
+	font-weight: 900;
+	font-size: 40px;
+}
+
+/* Quick Links Container */
+#quicklink-container
+{
+	background-color: #595859;
+	padding: 10px;
+}
+/* Schedule Styles */
+#schedule-container
+{
+	background-color: #db5858;
+}
+
+#scheduleRow
+{
+	background-color: #db5858;
+}
+
+
+
+/*	Edit styles */
+#edit-container
+{
+	background-color: #6dbcdb;
+}
+button[type=submit]:hover
+{
+	background-color: #3cc8ff;
+	color: white;
+}
+input[type=text]:focus, input[type=date]:focus, input:focus, textarea:focus, input[type=password]:focus
+{
+	border: 3px solid #44F1CE;
+}
+
+/* Footer Styles */
+#footer-container
+{
+	background-color: #fc4349;
+}
+
+.card
+{
+	background-color: #F9EEFA;
+	padding: 15px;
+	margin: 20px;
+	box-shadow: 10px 10px solid black;
+}
+.panel-body
+{
+	color:black;
+}
+
+
+
+
+
+
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
+
+
+
