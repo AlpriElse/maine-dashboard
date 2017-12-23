@@ -1,0 +1,51 @@
+{
+    "Calendar": [
+        {
+            "name": "Early Dismissal",
+            "desc": "Early Dismissal schedule in effect.",
+            "dayType": 12,
+            "dateRange": false,
+            "year": 2016,
+            "month": 10,
+            "day": 6
+        },
+        {
+            "name": "Assembly Day",
+            "desc": "Assembly Schedule is in effect.",
+            "dayType": 4,
+            "dateRange": false,
+            "year": 2016,
+            "month": 9,
+            "day": 22
+        }
+        ,
+        {
+            "name": "Assembly Day",
+            "desc": "Assembly Schedule is in effect.",
+            "dayType": 4,
+            "dateRange": false,
+            "year": 2016,
+            "month": 9,
+            "day": 23
+        }
+        ,
+        {
+            "name": "Assembly Day",
+            "desc": "Assembly Schedule is in effect.",
+            "dayType": 4,
+            "dateRange": false,
+            "year": 2016,
+            "month": 12,
+            "day": 16
+        },
+        {
+            "name": "Advisory",
+            "desc": "Advisory Day is in effect.",
+            "dayType": 3,
+            "dateRange": false,
+            "year": 2017,
+            "month": 3,
+            "day": 29
+        }
+    ]
+}

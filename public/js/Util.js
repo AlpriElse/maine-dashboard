@@ -207,8 +207,8 @@ function Util()
 			if(hr.readyState == 4 && hr.status == 200)
 			{
 				calendar = JSON.parse(hr.responseText.toString()).Calendar;
-				console.log("Calendar Parsed!")
-				console.log(calendar);
+				// console.log("Calendar Parsed!")
+				// console.log(calendar);
 				return calendar;
 			}
 		}
@@ -224,8 +224,8 @@ function Util()
 			if(hr.readyState == 4 && hr.status == 200)
 			{
 				schedule = JSON.parse(hr.responseText.toString());
-				console.log("Schedule Parsed!");
-				console.log(schedule);
+				// console.log("Schedule Parsed!");
+				// console.log(schedule);
 				return schedule;
 			}
 		}

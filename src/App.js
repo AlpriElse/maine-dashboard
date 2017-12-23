@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+
+
 
 class App extends Component {
-  render() {
-    return (
-    <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Maine D ashboard</h1>
-      </header>
-      <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
+  constructor(props) {
+    super(props);
+    this.parseSchedule = this.parseSchedule.bind(this);
+  }
 
-    );
+  parseSchedule() {
+    // Parses the schedule
+    var schedule = require('./data/schedules.json');
+    // console.log("Schedule Parsed!");
+    // Gets the starting first period hour of a regular day
+    // var time = JSON.stringify(schedule['regular'][1]['start']);
+    // var hour = parseInt(time/60);
+    // var minute = parseInt(time%60);
+    // var text = <p>{hour}:{minute}</p>
+    // return <p>{hour}:{minute}</p>
+    console.log(schedule);
+
+  }
+  render() {
+    return <div>{this.parseSchedule()}</div>
   }
 }
 
