@@ -20,6 +20,7 @@
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "jquery": "^3.2.1",
+    "moment": "^2.20.1",
     "mongoose": "^4.12.4",
     "node-sass": "^4.5.0",
     "popper.js": "^1.12.6",

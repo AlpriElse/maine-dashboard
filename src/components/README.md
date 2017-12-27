@@ -4,10 +4,10 @@ This folder is intended to hold ReactJS Components to be used for Frontend devel
 ## File Structure Meta   
 
 `~/components/views`
-Holds the front end views i.e. pages.
+Holds the front end views i.e. page specific views.
 
 `~/components/[VIEW]`
 Holds the React components unique (children) to VIEW.
 
 `~/components/utility`
-Holds common React components. 
+Holds common React components.
