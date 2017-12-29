@@ -1,0 +1,44 @@
+{
+  "schedules":[
+    {
+      "name":"regular",
+      "events": [
+        {"name":"No School ATM ", "start": 0, "end": 445 },
+    		{"name":"Flap", "start": 445, "end": 465 },
+    		{"name":"1", "start": 465, "end": 510 },
+    		{"name":"1 - 2A Passing", "start": 510, "end":515},
+    		{"name":"2A", "start": 515, "end": 535 },
+    		{"name":"2A - 2B Passing", "start": 535, "end":540},
+    		{"name":"2B", "start": 540, "end": 560 },
+    		{"name":"2B - 3A Passing", "start": 560, "end":565},
+    		{"name":"3A", "start": 565, "end": 585 },
+    		{"name":"3A - 3B Passing", "start": 585, "end":590},
+    		{"name":"3B", "start": 590, "end": 610 },
+    		{"name":"Hawk Talk", "start": 610, "end": 615 },
+    		{"name":"3B - 4A Passing", "start": 615, "end":620},
+    		{"name":"4A", "start": 620, "end": 640 },
+    		{"name":"4A - 4B Passing", "start": 640, "end":645},
+    		{"name":"4B", "start": 645, "end": 665 },
+    		{"name":"4B - 5A Passing", "start": 665, "end":670},
+    		{"name":"5A", "start": 670, "end": 690 },
+    		{"name":"5A - 5B Passing", "start": 690, "end":695},
+    		{"name":"5B", "start": 695, "end": 715 },
+    		{"name":"5B - 6A Passing", "start": 715, "end":720},
+    		{"name":"6A", "start": 720, "end": 740 },
+    		{"name":"6A - 6B Passing", "start": 740, "end":745},
+    		{"name":"6B", "start": 745, "end": 765 },
+    		{"name":"6B - 7A Passing", "start": 765, "end":770},
+    		{"name":"7A", "start": 770, "end": 790 },
+    		{"name":"7A - 7B Passing", "start": 790, "end":795},
+    		{"name":"7B", "start": 795, "end": 815 },
+    		{"name":"7B - 8A Passing", "start": 815, "end":820},
+    		{"name":"8A", "start": 820, "end": 840 },
+    		{"name":"8A - 8B Passing", "start": 840, "end":845},
+    		{"name":"8B", "start": 845, "end": 865 },
+    		{"name":"8B - 9 Passing", "start": 865, "end":870},
+    		{"name":"9", "start": 870, "end": 915 },
+    		{"name":"No School ATM", "start": 915, "end": 1440 }
+      ]
+    }
+  ]
+}
