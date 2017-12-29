@@ -14,7 +14,7 @@ router.get('/schedule', function(req, res) {
     if (err) {
       console.log(process.cwd());
     };
-    res.write(data);
+    res.send(data);
   });
 });
 module.exports = router;
