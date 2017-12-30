@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import Calendar from '../home/calendar';
 import Clock from '../home/clock';
@@ -9,12 +10,20 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: {},
+      scheduleLoaded: false,
+      time: "",
       schedule: {}
     };
   }
 
   componentDidMount() {
+    this.interval = setInterval(() => {
+      var time = moment().format("hh:mm:ss A");
+      this.setState({
+        time: time
+      })
+    }, 1000);
+
     var url = "api/schedule";
     fetch(url)
       .then(res => {
@@ -22,9 +31,35 @@ export default class Home extends React.Component {
       })
       .then(schedule => {
         this.setState({
+          scheduleLoaded: true,
           schedule: schedule
-        })
+        });
       })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  renderContent() {
+    if (this.state.scheduleLoaded) {
+      return (
+        <div>
+          <Clock
+            time={this.state.time}/>
+          <Countdown
+            schedule={this.state.schedule}/>
+          <Schedule />
+          <Calendar />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <p>Loading...</p>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -34,12 +69,10 @@ export default class Home extends React.Component {
         <br />
         <div>
           <h1>This is home.</h1>
-
         </div>
-        <Clock />
-        <Countdown />
-        <Schedule />
-        <Calendar />
+        {
+          this.renderContent()
+        }
       </div>
     )
   }
