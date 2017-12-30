@@ -3,3 +3,13 @@ body {
   background: $var;
   color: black;
 }
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar {
+    min-height: 120px;
+}
