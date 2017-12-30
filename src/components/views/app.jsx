@@ -2,6 +2,7 @@ import React from "react";
 import moment from 'moment';
 
 import Navbar from './navbar';
+import getSchedule from '../utility/getSchedule';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class App extends React.Component {
     this.state = {
       schedule: {},
       scheduleLoaded: false,
-      time: ""
+      time: moment().format("hh:mm:ss A")
     }
   }
   componentDidMount() {
@@ -20,17 +21,12 @@ export default class App extends React.Component {
       })
     }, 1000);
 
-    var url = "api/schedule";
-    fetch(url)
-      .then(res => {
-        return res.json();
-      })
-      .then(schedule => {
-        this.setState({
-          scheduleLoaded: true,
-          schedule: schedule
-        });
-      })
+    getSchedule(schedule => {
+      this.setState({
+        scheduleLoaded: true,
+        schedule: schedule
+      });
+    })
   }
 
   componentWillUnmount() {

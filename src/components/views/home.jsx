@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
+import getSchedule from '../utility/getSchedule.js';
 import Calendar from '../home/calendar';
 import Clock from '../home/clock';
 import Schedule from '../home/schedule';
@@ -25,16 +26,12 @@ export default class Home extends React.Component {
     }, 1000);
 
     var url = "api/schedule";
-    fetch(url)
-      .then(res => {
-        return res.json();
+    getSchedule(schedule => {
+      this.setState({
+        scheduleLoaded: true,
+        schedule: schedule
       })
-      .then(schedule => {
-        this.setState({
-          scheduleLoaded: true,
-          schedule: schedule
-        });
-      })
+    })
   }
 
   componentWillUnmount() {
