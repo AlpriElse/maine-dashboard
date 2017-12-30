@@ -1,7 +1,7 @@
 {
   "schedules":[
     {
-      "name":"regular",
+      "name":"Regular Day Schedule",
       "events": [
     		{"name":"Flap", "start": "07:25", "end": "07:45" },
         {"name":"Period 1", "start": "07:45", "end": "08:30" },
@@ -20,7 +20,7 @@
         {"name":"Period 8a", "start": "13:40", "end": "14:00" },
         {"name":"Period 8b", "start": "14:05", "end": "14:25" },
         {"name":"Period 9", "start": "14:30", "end": "15:15" },
-        {"name":"test", "start": "23:30", "end": "23:59" }
+        {"name":"Period 10", "start": "16:00", "end": "23:59" }
       ]
     }
   ]

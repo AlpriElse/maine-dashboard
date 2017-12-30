@@ -33,7 +33,7 @@ export default class Schedule extends React.Component {
     if (this.state.events.length > 0) {
       return (
         <div className="col-8 offset-md-2 text-center">
-          <h2>This is a schedule</h2>
+          <h2>{this.props.schedule.name}</h2>
           <table className="table">
             <thead className="thead-dark">
               <tr>

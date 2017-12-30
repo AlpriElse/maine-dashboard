@@ -30,7 +30,7 @@ export default class Navbar extends React.Component {
       <nav className="navbar navbar-dark sticky-top navbar-expand-md bg-dark justify-content-between">
         <div className="navbar-collapse collapse dual-nav">
             <ul className="navbar-nav">
-                <li className="nav-item active">
+                <li className="nav-item">
                     <a className="nav-link pl-0" href="#">Home <span className="sr-only">Home</span></a>
                 </li>
                 <li className="nav-item">
@@ -44,7 +44,7 @@ export default class Navbar extends React.Component {
         </div>
         <div className="navbar-collapse collapse dual-nav">
             <ul className="nav navbar-nav ml-auto">
-                <li className="nav-item">Login</li>
+                <li><button className="btn btn-outline-light" role="button">Login</button></li>
             </ul>
         </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">

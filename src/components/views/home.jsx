@@ -36,21 +36,12 @@ export default class Home extends React.Component {
   }
 
   renderContent() {
-    if (this.state.scheduleLoaded) {
-      return (
-        <div>
-          <Schedule
-            schedule={this.state.schedule}/>
-          <Calendar />
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <p>Loading...</p>
-        </div>
-      )
-    }
+    return (
+      <div>
+        <Schedule
+          schedule={this.state.schedule}/>
+      </div>
+    )
   }
 
   render() {
