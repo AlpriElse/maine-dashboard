@@ -13,6 +13,20 @@ export default class Home extends React.Component {
       schedule: {}
     };
   }
+
+  componentDidMount() {
+    var url = "api/schedule";
+    fetch(url)
+      .then(res => {
+        return res.json();
+      })
+      .then(schedule => {
+        this.setState({
+          schedule: schedule
+        })
+      })
+  }
+
   render() {
     return (
       <div className="container">
@@ -20,6 +34,7 @@ export default class Home extends React.Component {
         <br />
         <div>
           <h1>This is home.</h1>
+
         </div>
         <Clock />
         <Countdown />

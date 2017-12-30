@@ -14,7 +14,9 @@ router.get('/schedule', function(req, res) {
     if (err) {
       console.log(process.cwd());
     };
-    res.send(data);
+    //  Send Regular Schedule
+    var obj = JSON.parse(data);
+    res.send(JSON.stringify(obj.schedules[0]));
   });
 });
 module.exports = router;
