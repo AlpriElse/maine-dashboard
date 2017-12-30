@@ -17,7 +17,16 @@ export default class Countdown extends React.Component {
         currentEvent = event;
       }
       if(isBefore) {
-        nextEvent = event;
+        if (nextEvent.name != undefined) {
+          var prevStart = moment(nextEvent.start, "HH:mm");
+          var diff = moment().diff(start);
+          var prevDiff = moment().diff(prevStart);
+          if (diff > 0 && diff < prevDiff) {
+            nextEvent = event;
+          }
+        } else {
+          nextEvent = event;
+        }
       }
 
     });

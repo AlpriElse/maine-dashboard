@@ -16,7 +16,7 @@ export default class Schedule extends React.Component {
         var end = moment(event.end, "HH:mm").format("hh:mm");
         var time = start + " - " + end;
         return (
-          <tr>
+          <tr key={"event_" + event.name}>
             <td>{time}</td>
             <td>{event.name}</td>
           </tr>
