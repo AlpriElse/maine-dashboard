@@ -49,7 +49,8 @@ export default class Home extends React.Component {
             time={this.state.time}/>
           <Countdown
             schedule={this.state.schedule}/>
-          <Schedule />
+          <Schedule
+            schedule={this.state.schedule}/>
           <Calendar />
         </div>
       )

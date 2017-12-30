@@ -16,7 +16,6 @@ export default class Countdown extends React.Component {
       if(isNow) {
         currentEvent = event;
       }
-
       if(isBefore) {
         nextEvent = event;
       }
@@ -33,7 +32,7 @@ export default class Countdown extends React.Component {
     } else {
       message = "No more events for the day."
     }
-    
+
     return (
       <div>
         <h2>{message}</h2>
