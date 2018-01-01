@@ -34,20 +34,7 @@ export default class Schedule extends React.Component {
       return (
         <div className="col-8 offset-md-2 text-center">
           <h2>{this.props.schedule.name}</h2>
-          <table className="table">
-            <thead className="thead-dark">
-              <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Event</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                this.state.events
-              }
 
-            </tbody>
-          </table>
         </div>
       )
     } else {
