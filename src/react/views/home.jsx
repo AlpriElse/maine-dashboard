@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import getSchedule from '../utility/getSchedule.js';
-import Schedule from '../home/schedule';
+import Schedule from '../components/schedule';
 
 export default class Home extends React.Component {
   constructor(props) {

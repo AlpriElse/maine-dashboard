@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Router, browserHistory } from 'react-router';
-import routes from './components/routes';
+import routes from './react/routes';
 require('moment');
 
+//
 require('bootstrap');
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 require('./stylesheets/styles.scss');
 
 ReactDom.render(
