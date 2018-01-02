@@ -13,6 +13,7 @@ export default class ScheduleEditor extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNewEvent = this.handleNewEvent.bind(this);
+    this.handleDeleteEvent = this.handleDeleteEvent.bind(this);
   }
 
   handleChange(e) {
@@ -25,10 +26,12 @@ export default class ScheduleEditor extends React.Component {
     e.preventDefault();
     var schedulesRef = firebase.database().ref('schedules');
     var schedule = {
-      name: this.state.scheduleName
+      name: this.state.scheduleName,
+      events: this.state.events
     }
     schedulesRef.push(schedule);
-    console.log("send");
+    console.log("Data Sent.");
+    console.log(schedule);
     this.setState({
       scheduleName: "",
       events: []
@@ -48,25 +51,29 @@ export default class ScheduleEditor extends React.Component {
     });
   }
 
-  render() {
+  handleDeleteEvent(e) {
+    var key = e.target.name;
     var events = this.state.events;
-    var eventsArr = new Array();
-    if (events.length <= 0) {
-      eventsArr = <tr className="text-center"> No Events </tr>;
-    } else {
-      eventsArr = events.map(event => {
-        var start = moment(event.start, "HH:mm").format("hh:mm");
-        var end = moment(event.end, "HH:mm").format("hh:mm");
-        var time = start + " - " + end;
-        return (
-          <tr key={"event_" + event.name}>
-            <td>{time}</td>
-            <td>{event.name}</td>
-          </tr>
-        )
-
-      });
+    var index = -1;
+    for (var i = 0; i < events.length; i++) {
+      var event = events[i];
+      var start = moment(event.start, "HH:mm").format("hh:mm");
+      var end = moment(event.end, "HH:mm").format("hh:mm");
+      var currKey = "event_" + event.name + start + end;
+      if (currKey == key) {
+        index = i;
+        break;
+      }
     }
+    if (index != -1) {
+      events.splice(index, 1);
+    }
+    this.setState({
+      events: events
+    });
+  }
+
+  render() {
 
     return (
       <div>
@@ -87,24 +94,17 @@ export default class ScheduleEditor extends React.Component {
                     onChange={this.handleChange}
                     value={this.state.scheduleName}/>
                 </div>
-                <table className="table">
-                  <thead className="thead-dark">
-                    <tr>
-                      <th scope="col">Time</th>
-                      <th scope="col">Event</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {
-                      eventsArr
-                    }
-                  </tbody>
-                </table>
+
+                <EventsTable
+                  events={this.state.events}
+                  handleDeleteEvent={this.handleDeleteEvent}/>
+
+                <br /><br /><br />
                 <div className="container form-row">
-                  <div className="form-group col-md-4 offset-md-3">
+                  <div className="form-group col-md-4 offset-md-2">
                     <label htmlFor="newStartTime" className="col-form-label text-center">Start Time</label>
                     <input type="text"
-                      className="form-control col-md-6"
+                      className="form-control col-md-12"
                       id="newStartTime"
                       placeholder="11:00"
                       onChange={this.handleChange}
@@ -113,26 +113,25 @@ export default class ScheduleEditor extends React.Component {
                   <div className="form-group col-md-4">
                   <label htmlFor="newEndTime" className="col-form-label text-center">End Time</label>
                     <input type="text"
-                      className="form-control col-md-6"
+                      className="form-control col-md-12"
                       id="newEndTime"
                       placeholder="23:00"
                       onChange={this.handleChange}
                       value={this.state.newEndTime}/>
                   </div>
                 </div>
-
                 <div className="form-group form-row container">
-                  <label htmlFor="newEvent" className="col-md-4 col-form-label text-center">Event Name</label>
+                  <label htmlFor="newEvent" className="col-md-4 offset-md-2 col-form-label text-center">Event Name</label>
                   <input type="text"
-                    className="form-control col-md-6"
+                    className="form-control col-md-4"
                     id="newEvent"
                     placeholder="Period 1"
                     onChange={this.handleChange}
                     value={this.state.newEvent} />
                 </div>
-                <button type="button" className="btn btn-primary" onClick={this.handleNewEvent}>Add Event</button>
+                <button type="button" className="btn btn-primary btn-block col-6 offset-md-3" onClick={this.handleNewEvent}>Add Event</button>
                 <br /><br />
-                <button type="submit" className="btn btn-primary btn-lg">Add Schedule</button>
+                <button type="submit" className="btn btn-primary btn-block btn-lg">Add Schedule</button>
               </form>
             </div>
           </div>
