@@ -1,11 +1,13 @@
 import React from 'react';
 import moment from 'moment';
 
+const defaultMessage = <tr><td>No events scheduled.</td></tr>;
+
 export default class EventsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [<tr key="defaultMessage"><td>No events scheduled.</td></tr>]
     }
   }
   componentWillReceiveProps() {
@@ -36,7 +38,7 @@ export default class EventsTable extends React.Component {
 
       });
     } else {
-      eventsArr = <tr><td>No events scheduled.</td></tr>;
+      eventsArr = defaultMessage;
     }
     this.setState({
       events: eventsArr

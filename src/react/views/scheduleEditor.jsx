@@ -1,6 +1,7 @@
 import React from 'react';
-import firebase from '../utility/firebase';
+import firebase, {getAllSchedules, addSchedule} from '../utility/firebase';
 import EventsTable from '../components/eventsTable';
+
 import moment from 'moment';
 
 export default class ScheduleEditor extends React.Component {
@@ -8,7 +9,9 @@ export default class ScheduleEditor extends React.Component {
     super(props);
     this.state = {
       scheduleName: "",
-      events: new Array()
+      events: new Array(),
+      schedules: [],
+      mode: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,6 +19,15 @@ export default class ScheduleEditor extends React.Component {
     this.handleDeleteEvent = this.handleDeleteEvent.bind(this);
   }
 
+  componentDidMount() {
+    getAllSchedules(schedules => {
+      console.log("called");
+      console.log(schedules);
+      this.setState({
+        schedules: schedules
+      });
+    });
+  }
   handleChange(e) {
     this.setState({
       [e.target.id]: e.target.value
@@ -24,18 +36,19 @@ export default class ScheduleEditor extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    var schedulesRef = firebase.database().ref('schedules');
     var schedule = {
       name: this.state.scheduleName,
       events: this.state.events
     }
-    schedulesRef.push(schedule);
-    console.log("Data Sent.");
-    console.log(schedule);
-    this.setState({
-      scheduleName: "",
-      events: []
-    });
+    if (schedule.name == "" || schedule.events.length == 0 ) {
+      console.log("Data not sent. Either no schedule name of no events added.");
+    } else {
+      addSchedule(schedule);
+      this.setState({
+        scheduleName: "",
+        events: []
+      });
+    }
   }
 
   handleNewEvent() {
@@ -47,7 +60,8 @@ export default class ScheduleEditor extends React.Component {
     this.setState({
       newEvent: "",
       newStartTime: "",
-      newEndTime: ""
+      newEndTime: "",
+      schedules: getAllSchedules()
     });
   }
 
@@ -73,8 +87,20 @@ export default class ScheduleEditor extends React.Component {
     });
   }
 
-  render() {
 
+  render() {
+    console.log("Render");
+    var mode = this.state.scheduleSelector;
+    if (mode != "Add") {
+      var schedule;
+      var schedules = this.state.schedules;
+      for (var i = 0; i < schedules.length; i++) {
+        if (schedules[i].name = mode) {
+          console.log(schedules[i].events);
+          this.state.events = schedules[i].events;
+        }
+      }
+    }
     return (
       <div>
         <br />
@@ -83,6 +109,24 @@ export default class ScheduleEditor extends React.Component {
           <div className="card-body">
             <h3 className="card-title text-center">Schedule Editor</h3>
             <br />
+            <div>
+              <form>
+                <div className="form-group">
+                  <label htmlFor="">Select a schedule to edit.</label>
+                  <select multiple className="form-control" id="scheduleSelector" onChange={this.handleChange}>
+                    <option value="Add">Add new schedule</option>
+                    {
+                      this.state.schedules.map(schedule => {
+                        return (
+                          <option key={"option_" + schedule.name}
+                            value={schedule.name}>{schedule.name}</option>
+                        )
+                      })
+                    }
+                  </select>
+                </div>
+              </form>
+            </div>
             <div>
               <form onSubmit={this.handleSubmit}>
                 <div className="form-group row container">
@@ -111,7 +155,7 @@ export default class ScheduleEditor extends React.Component {
                       value={this.state.newStartTime}/>
                   </div>
                   <div className="form-group col-md-4">
-                  <label htmlFor="newEndTime" className="col-form-label text-center">End Time</label>
+                    <label htmlFor="newEndTime" className="col-form-label text-center">End Time</label>
                     <input type="text"
                       className="form-control col-md-12"
                       id="newEndTime"

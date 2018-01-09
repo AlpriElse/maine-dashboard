@@ -25,6 +25,7 @@
     "mongoose": "^4.12.4",
     "node-sass": "^4.5.0",
     "popper.js": "^1.12.6",
+    "rc-time-picker": "^3.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
