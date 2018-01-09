@@ -34,7 +34,7 @@ export default class Navbar extends React.Component {
                     <a className="nav-link pl-0" href="/">Home <span className="sr-only">Home</span></a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/comingSoon">Extracurricular</a>
+                    <a className="nav-link" href="/comingSoon">Extracurriculars</a>
                 </li>
             </ul>
         </div>
@@ -44,9 +44,9 @@ export default class Navbar extends React.Component {
           {specials}
           </span>
         </div>
-        <div className="navbar-collapse collapse dual-nav">
+        <div className="collapse navbar-collapse dual-nav">
             <ul className="nav navbar-nav ml-auto">
-                <li><a href="/comingSoon" className="btn btn-outline-light" role="button">Login</a></li>
+                <li><a href="/comingSoon" className="btn btn-outline-light btn-outline-red" role="button">Login</a></li>
             </ul>
         </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
