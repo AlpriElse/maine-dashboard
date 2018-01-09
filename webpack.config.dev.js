@@ -21,6 +21,10 @@ module.exports = {
             {
                 test: /\.css|.scss$/,
                 loader: 'style-loader!css-loader!sass-loader?sourceMap'
+            },
+            {
+              test: /\.(png|svg|jpeg|jpg|gif)$/,
+              loader: 'file-loader'
             }
         ]
     },

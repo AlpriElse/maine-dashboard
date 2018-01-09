@@ -36,6 +36,7 @@
     "webpack-hot-middleware": "^2.16.1"
   },
   "devDependencies": {
+    "file-loader": "^1.1.6",
     "nodemon": "^1.12.1"
   },
   "author": "Alpri Else",

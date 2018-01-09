@@ -1,7 +1,10 @@
-$var: white;
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+$var: #232624;
 body {
   background: $var;
-  color: black;
+  color: white;
+  font-family: "Roboto";
 }
 
 .abs-center-x {
@@ -11,5 +14,46 @@ body {
 }
 
 .navbar {
-    min-height: 120px;
+    min-height: 130px;
+}
+.navbar-custom {
+  background-color: #232624;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #E84E45;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #E84E45;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #E87A73;
+}
+
+.navbar-brand {
+    font-family: "Roboto";
+    font-size: 2em;
+    margin-bottom: -20px;
+}
+.navbar-brand-primary {
+  font-weight: 900;
+}
+.navbar-brand-secondary {
+  font-weight: 300;
+}
+.time {
+  font-size: 1.6em;
+}
+.home-background {
+  background-image: linear-gradient(rgba(232,122,115,.7),rgba(2,132,168,.3)), url("../assets/background.min.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.schedule {
+  color: white;
 }

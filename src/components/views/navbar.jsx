@@ -10,9 +10,9 @@ export default class Navbar extends React.Component {
       var message = genCountdownMessage(schedule);
       return (
         <div>
-          <span>{this.props.time}</span><br />
+          <span className="time">{this.props.time}</span><br />
 
-          <span>{message}</span>
+          <span className="message">{message}</span>
         </div>
       )
     } else {
@@ -27,24 +27,26 @@ export default class Navbar extends React.Component {
     var visible = true;
     var specials = this.generateSpecials();
     return (
-      <nav className="navbar navbar-dark sticky-top navbar-expand-md bg-dark justify-content-between">
+      <nav className="navbar sticky-top navbar-expand-md justify-content-between navbar-custom">
         <div className="navbar-collapse collapse dual-nav">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link pl-0" href="#">Home <span className="sr-only">Home</span></a>
+                    <a className="nav-link pl-0" href="/">Home <span className="sr-only">Home</span></a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Extracurricular</a>
+                    <a className="nav-link" href="/comingSoon">Extracurricular</a>
                 </li>
             </ul>
         </div>
-        <div className="navbar-brand abs-center-x text-center">
-          <a href="/" >Maine Dashboard</a><br />
+        <div className="abs-center-x text-center">
+          <a className="navbar-brand" href="/" ><span className="navbar-brand-primary">MAINE</span><span className="navbar-brand-secondary">DASHBOARD</span></a><br/>
+          <span className="navbar-text">
           {specials}
+          </span>
         </div>
         <div className="navbar-collapse collapse dual-nav">
             <ul className="nav navbar-nav ml-auto">
-                <li><button className="btn btn-outline-light" role="button">Login</button></li>
+                <li><a href="/comingSoon" className="btn btn-outline-light" role="button">Login</a></li>
             </ul>
         </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
