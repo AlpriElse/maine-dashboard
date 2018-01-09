@@ -16,7 +16,16 @@ router.get('/schedule', function(req, res) {
     };
     //  Send Regular Schedule
     var obj = JSON.parse(data);
-    res.send(JSON.stringify(obj.schedules[0]));
+
+    //  Schedule indexes
+    const REGULAR = 0;
+    const LATE = 1;
+    if (moment().format("dddd") == "Wednesday") {
+      res.send(JSON.stringify(obj.schedules[LATE]));
+    } else {
+      res.send(JSON.stringify(obj.schedules[REGULAR]));
+    }
+
   });
 });
 module.exports = router;
