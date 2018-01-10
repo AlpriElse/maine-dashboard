@@ -22,7 +22,7 @@ app.get('*', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-app.listen(process.env.PORT || 5000, function(err) {
+app.listen(process.env.PORT || 8080, function(err) {
     if (err) {
         console.log(err);
         return;
